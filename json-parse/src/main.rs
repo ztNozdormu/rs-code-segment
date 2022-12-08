@@ -19,4 +19,15 @@ fn main() {
         Ok(_) => println!("解析文件内容数据为具体结构对象成功!"),
         Err(err) => println!("解析文件内容数据为具体结构对象发生异常{}", err),
     }
+    let test1 = "data/test1.json".to_owned();
+    let data_theme = fs::read_to_string(test1).expect("Couldn't find or load that file.");
+    let theme = parser::parser_theme(&data_theme);
+    match theme {
+        Ok(v) => {
+              // 遍历theme数据
+            println!("theme colors Black value is {:#?}",v.colors.get("black"))
+        },
+        Err(err) => println!("解析文件嵌套内容数据为具体结构对象发生异常{}", err),
+    }
+   
 }

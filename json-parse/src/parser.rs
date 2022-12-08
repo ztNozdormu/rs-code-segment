@@ -12,18 +12,18 @@ pub struct Person {
 // 嵌套类型
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Theme {
-    animation: HashMap<String, String>,
-    breakpoints: HashMap<String, String>,
-    colors: HashMap<String, String>,
-    fonts: HashMap<String, String>,
-    font_sizes: Vec<i32>,
-    font_weights: HashMap<String, i32>,
-    line_heights: HashMap<String, f32>,
-    space: Vec<i32>,
-    sizes: HashMap<String, i32>,
-    radii: HashMap<String, i32>,
-    shadows: HashMap<String, HashMap<String, String>>,
-    gradients: HashMap<String, String>,
+    pub animation: HashMap<String, String>,
+    pub breakpoints: HashMap<String, String>,
+    pub colors: HashMap<String, String>,
+    pub fonts: HashMap<String, String>,
+    pub font_sizes: Vec<i32>,
+    pub font_weights: HashMap<String, i32>,
+    pub line_heights: HashMap<String, f32>,
+    pub space: Vec<i32>,
+    pub sizes: HashMap<String, i32>,
+    pub radii: HashMap<String, i32>,
+    pub shadows: HashMap<String, HashMap<String, String>>,
+    pub gradients: HashMap<String, String>,
 }
 // example
 pub fn untyped_examples() -> Result<()> {
