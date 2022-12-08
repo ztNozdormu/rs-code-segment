@@ -14,7 +14,7 @@ fn main() {
         Ok(_) => println!("解析文件内容数据成功!"),
         Err(err) => println!("解析文件内容数据发生异常{}", err),
     }
-    let result2= parser::parser_type(&data);
+    let result2 = parser::parser_type(&data);
     match result2 {
         Ok(_) => println!("解析文件内容数据为具体结构对象成功!"),
         Err(err) => println!("解析文件内容数据为具体结构对象发生异常{}", err),
