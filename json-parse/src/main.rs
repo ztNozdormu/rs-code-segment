@@ -1,3 +1,4 @@
+use std::fs;
 pub mod parser;
 
 fn main() {
@@ -6,5 +7,11 @@ fn main() {
         Ok(_) => println!("解析数据成功!"),
         Err(err) => println!("解析数据发生异常{}", err),
     }
-    println!("Hello, world!");
+    let path = "data/test.json".to_owned();
+    let data = fs::read_to_string(path).expect("Couldn't find or load that file.");
+    let result1 = parser::parser_str(&data);
+    match result1 {
+        Ok(_) => println!("解析文件内容数据成功!"),
+        Err(err) => println!("解析文件内容数据发生异常{}", err),
+    }
 }

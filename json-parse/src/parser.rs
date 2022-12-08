@@ -1,5 +1,5 @@
 use serde_json::{Result, Value};
-
+// example
 pub fn untyped_examples() -> Result<()> {
     // Some JSON input data as a &str. Maybe this comes from the user.
     let data = r#"
@@ -12,6 +12,12 @@ pub fn untyped_examples() -> Result<()> {
             ]
         }"#;
     // 通过 from_str函数将字符串转换为json结构数据
+    let v: Value = serde_json::from_str(data)?;
+    println!("please Call {} at the number {}", v["name"], v["phones"][0]);
+    Ok(())
+}
+// parser by data args
+pub fn parser_str(data: &str) -> Result<()> {
     let v: Value = serde_json::from_str(data)?;
     println!("please Call {} at the number {}", v["name"], v["phones"][0]);
     Ok(())
