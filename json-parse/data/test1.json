@@ -8,7 +8,11 @@
       "tablet": "768px",
       "computer": "992px",
       "desktop": "1200px",
-      "widescreen": "1920px"
+      "widescreen": "1920px",
+      "high": 2000,
+      "wide": 1500,
+      "long": 1600
+
     },
     "colors": {
       "text": "#111212",
