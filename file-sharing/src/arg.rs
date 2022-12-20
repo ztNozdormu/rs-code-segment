@@ -1,7 +1,9 @@
+use std::path::PathBuf;
+
 use clap::Parser;
 use libp2p::Multiaddr;
 
-#[derive(Debug,Parser)]
+#[derive(Debug, Parser)]
 #[clap(name = "P2P File Sharing")]
 pub struct Opt {
     // 生成密钥对种子
@@ -14,10 +16,10 @@ pub struct Opt {
     #[clap(long)]
     pub listen_address: Option<Multiaddr>,
     // 子命令
-    #[clap(long)]
-    pub cli_argument: Option<CliArgument>,
+    #[clap(subcommand)]
+    pub cli_argument: CliArgument,
 }
-#[derive(Debug,Parser)]
+#[derive(Debug, Parser)]
 pub enum CliArgument {
     // 提供文件子命令
     Provide {
@@ -30,5 +32,5 @@ pub enum CliArgument {
     Get {
         #[clap(long)]
         name: String, // 文件名称
-    }
+    },
 }
