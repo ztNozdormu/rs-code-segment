@@ -16,3 +16,20 @@
                 get \
                 --name <文件名称>
 ```
+### 测试命令
+1. 上传文件命令
+```
+cargo run -- \
+          --listen-address /ip4/127.0.0.1/tcp/40837 \
+          --secret-key-seed 1 \
+          provide \
+          --path /Users/Justin/sharing_file.txt \
+          --name sharing_file
+```
+2. 获取文件命令
+```
+cargo run -- \
+          --peer /ip4/127.0.0.1/tcp/40837/p2p/12D3KooWPjceQrSwdWXPyLLeABRXmuqt69Rg3sBYbU1Nft9HyQ6X \
+          get \
+          --name sharing_file
+```
